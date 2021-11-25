@@ -35,3 +35,15 @@ function handleInput(e) {
   }
   e.target.value = ""; // Clears input field
 }
+
+// Handles valid guesses // - Takes a value (set to value of input field above)
+function guessLetter(letter) {
+  letter = letter.toLowerCase(); // Transform to lowercase to allow user to input upper and lowercase letters
+
+  if (correctWord.includes(letter)) {
+    handleCorrectGuess(letter); // If correct word includes guessed letter run function for correct guess
+  } else {
+    handleWrongGuess(); // Else run function for wrong guess
+  }
+  lettersGuessed.push(letter); // Updates array of guessed letters
+}
