@@ -4,7 +4,9 @@ let correctWord = ""; // Randomly chosen word from word list
 let currentWord = []; // Chosen word to be displayed to user
 let wrongGuesses = 0; // Tracker for amount of wrong guesses
 let lettersGuessed = []; // Tracker for guessed letters
+let imageSource = `images/h${wrongGuesses}.png`;
 
+document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
 document.querySelector(".start-game").addEventListener("click", startGame); // Event listener for start button
 
 // Starts the game //
@@ -61,5 +63,11 @@ function handleCorrectGuess(letter) {
 // Handles wrong guesses //
 function handleWrongGuess() {
   wrongGuesses++;
+  updateImage(wrongGuesses);
   console.log(`wrong ${wrongGuesses} times`);
+}
+
+function updateImage(number) {
+  imageSource = `images/h${number}.png`;
+  document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
 }
