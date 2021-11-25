@@ -15,6 +15,7 @@ function startGame() {
   currentWord = []; // Resets variables every time a new game starts
   lettersGuessed = [];
   wrongGuesses = 0;
+  updateImage(wrongGuesses);
 
   // Depending on the length of correctWord, fills currentWord array with placeholder '_' on each index
   for (let i = 0; i < correctWord.length; i++) {
@@ -63,11 +64,16 @@ function handleCorrectGuess(letter) {
 // Handles wrong guesses //
 function handleWrongGuess() {
   wrongGuesses++;
-  updateImage(wrongGuesses);
-  console.log(`wrong ${wrongGuesses} times`);
+  if (wrongGuesses < 7) {
+    updateImage(wrongGuesses);
+    console.log(`wrong ${wrongGuesses} times`);
+  } else {
+    console.log("game over");
+  }
 }
 
+// Updates image //
 function updateImage(number) {
-  imageSource = `images/h${number}.png`;
-  document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
+  imageSource = `images/h${number}.png`; // Changes the url for the image
+  document.querySelector(".hangman-image").src = imageSource; // Sets the image source for the HTML element
 }
