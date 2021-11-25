@@ -47,3 +47,19 @@ function guessLetter(letter) {
   }
   lettersGuessed.push(letter); // Updates array of guessed letters
 }
+
+// Handles correct guesses // - Looks for occurences of letter in correctWord and splices them into currentWord
+function handleCorrectGuess(letter) {
+  for (let i = 0; i < correctWord.length; i++) {
+    if (correctWord[i] === letter) {
+      currentWord.splice(i, 1, letter); // Uses variable i to track index number and exchanges '_' for letter in currentWord
+    }
+  }
+  document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
+}
+
+// Handles wrong guesses //
+function handleWrongGuess() {
+  wrongGuesses++;
+  console.log(`wrong ${wrongGuesses} times`);
+}
