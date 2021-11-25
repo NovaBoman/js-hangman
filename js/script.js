@@ -20,3 +20,18 @@ function startGame() {
   }
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from currentWord and displays to user using p-tag.
 }
+
+document.querySelector(".guess").addEventListener("input", handleInput); // Event listener for input field
+
+// Handles user input in input field //
+function handleInput(e) {
+  const regExp = /[a-zA-Z]/; // Defines a regular expression with a pattern to match input to, set to lower/uppercase letters only
+  if (e.target.value.match(regExp)) {
+    // If the value of the event target (input field) matches the pattern run function guessLetter()
+    guessLetter(e.target.value);
+  } else {
+    // Handles cases where input does not match expected pattern
+    console.log("invalid input");
+  }
+  e.target.value = ""; // Clears input field
+}
