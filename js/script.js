@@ -16,6 +16,7 @@ function startGame() {
   lettersGuessed = [];
   wrongGuesses = 0;
   updateImage(wrongGuesses);
+  document.querySelector(".guess").disabled = false;
 
   // Depending on the length of correctWord, fills currentWord array with placeholder '_' on each index
   for (let i = 0; i < correctWord.length; i++) {
@@ -28,8 +29,8 @@ document.querySelector(".guess").addEventListener("input", handleInput); // Even
 
 // Handles user input in input field //
 function handleInput(e) {
-  //const regExp = /[a-z]/i; // Defines a regular expression with a pattern to match input to, set to lower/uppercase letters only
   if (e.target.value.match(/[a-z]/i)) {
+    // Defines a regular expression with a pattern to match input to, only letter a-z are allowed, flag i makes it case insensitive
     // If the value of the event target (input field) matches the pattern run function guessLetter()
     guessLetter(e.target.value);
   } else {
@@ -60,6 +61,7 @@ function handleCorrectGuess(letter) {
   }
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
   if (currentWord.join("") === correctWord) {
+    document.querySelector(".guess").disabled = true;
     console.log("you won!");
   }
 }
@@ -67,10 +69,10 @@ function handleCorrectGuess(letter) {
 // Handles wrong guesses //
 function handleWrongGuess() {
   wrongGuesses++;
-  if (wrongGuesses < 7) {
-    updateImage(wrongGuesses);
-    console.log(`wrong ${wrongGuesses} times`);
-  } else {
+  updateImage(wrongGuesses);
+  console.log(`wrong ${wrongGuesses} times`);
+  if (wrongGuesses === 6) {
+    document.querySelector(".guess").disabled = true;
     console.log("game over");
   }
 }
