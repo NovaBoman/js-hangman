@@ -18,6 +18,7 @@ function startGame() {
   lettersGuessed = [];
   wrongGuesses = 0;
   updateImage(wrongGuesses);
+  document.querySelector(".guessed-letters").innerHTML = "";
   document.querySelector(".guess-input").disabled = false; // Enables input after being disabled when game is won or lost
   printMessage("");
 
@@ -33,13 +34,15 @@ document.querySelector(".guess-input").addEventListener("input", handleInput); /
 // Handles user input in input field //
 function handleInput(e) {
   printMessage("");
-  if (e.target.value.match(/[a-z]/i)) {
-    // Defines a regular expression with a pattern to match input to, only letter a-z are allowed, flag i makes it case insensitive
-    // If the value of the event target (input field) matches the pattern run function guessLetter()
-    guessLetter(e.target.value);
-  } else {
-    // Handles cases where input does not match expected pattern
-    printMessage("Your guess must be a letter between A-Z");
+  if (!lettersGuessed.includes(e.target.value)) {
+    if (e.target.value.match(/[a-z]/i)) {
+      // Defines a regular expression with a pattern to match input to, only letter a-z are allowed, flag i makes it case insensitive
+      // If the value of the event target (input field) matches the pattern run function guessLetter()
+      guessLetter(e.target.value);
+    } else {
+      // Handles cases where input does not match expected pattern
+      printMessage("Your guess must be a letter between A-Z");
+    }
   }
   e.target.value = ""; // Clears input field
 }
@@ -53,7 +56,9 @@ function guessLetter(letter) {
   } else {
     handleWrongGuess(); // Else run function for wrong guess
   }
-  lettersGuessed.push(letter); // Updates array of guessed letters
+  lettersGuessed.push(letter); // Updates array of guessed letters and returns the updated array
+  document.querySelector(".guessed-letters").innerHTML =
+    lettersGuessed.join("");
 }
 
 // Handles correct guesses // - Looks for occurences of letter in correctWord and splices them into currentWord
