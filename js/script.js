@@ -28,8 +28,8 @@ document.querySelector(".guess").addEventListener("input", handleInput); // Even
 
 // Handles user input in input field //
 function handleInput(e) {
-  const regExp = /[a-zA-Z]/; // Defines a regular expression with a pattern to match input to, set to lower/uppercase letters only
-  if (e.target.value.match(regExp)) {
+  //const regExp = /[a-z]/i; // Defines a regular expression with a pattern to match input to, set to lower/uppercase letters only
+  if (e.target.value.match(/[a-z]/i)) {
     // If the value of the event target (input field) matches the pattern run function guessLetter()
     guessLetter(e.target.value);
   } else {
@@ -59,6 +59,9 @@ function handleCorrectGuess(letter) {
     }
   }
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
+  if (currentWord.join("") === correctWord) {
+    console.log("you won!");
+  }
 }
 
 // Handles wrong guesses //
