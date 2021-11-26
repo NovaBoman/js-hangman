@@ -7,8 +7,8 @@ let lettersGuessed = []; // Tracker for guessed letters
 let imageSource = `images/h${wrongGuesses}.png`;
 
 document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
-document.querySelector(".start-game").addEventListener("click", startGame); // Event listener for start button
-document.querySelector(".guess").disabled = true; // Disables the input field until the game is started
+document.querySelector(".new-game").addEventListener("click", startGame); // Event listener for start button
+document.querySelector(".guess-input").disabled = true; // Disables the input field until the game is started
 
 // Starts the game //
 function startGame() {
@@ -17,7 +17,7 @@ function startGame() {
   lettersGuessed = [];
   wrongGuesses = 0;
   updateImage(wrongGuesses);
-  document.querySelector(".guess").disabled = false; // Enables input after being disabled when game is won or lost
+  document.querySelector(".guess-input").disabled = false; // Enables input after being disabled when game is won or lost
 
   // Depending on the length of correctWord, fills currentWord array with placeholder '_' on each index
   for (let i = 0; i < correctWord.length; i++) {
@@ -26,7 +26,7 @@ function startGame() {
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from currentWord and displays to user using p-tag.
 }
 
-document.querySelector(".guess").addEventListener("input", handleInput); // Event listener for input field
+document.querySelector(".guess-input").addEventListener("input", handleInput); // Event listener for input field
 
 // Handles user input in input field //
 function handleInput(e) {
@@ -62,7 +62,7 @@ function handleCorrectGuess(letter) {
   }
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
   if (currentWord.join("") === correctWord) {
-    document.querySelector(".guess").disabled = true; // Disable input when game is won
+    document.querySelector(".guess-input").disabled = true; // Disable input when game is won
     console.log("you won!");
   }
 }
@@ -73,7 +73,7 @@ function handleWrongGuess() {
   updateImage(wrongGuesses);
   console.log(`wrong ${wrongGuesses} times`);
   if (wrongGuesses === 6) {
-    document.querySelector(".guess").disabled = true; // Disable input when game is lost
+    document.querySelector(".guess-input").disabled = true; // Disable input when game is lost
     console.log("game over");
   }
 }
