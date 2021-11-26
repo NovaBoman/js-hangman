@@ -26,7 +26,7 @@ function startGame() {
   for (let i = 0; i < correctWord.length; i++) {
     currentWord.push("_");
   }
-  document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from currentWord and displays to user using p-tag.
+  document.querySelector(".current-word").innerHTML = currentWord.join(" "); // Creates string from currentWord and displays to user using p-tag.
 }
 
 document.querySelector(".guess-input").addEventListener("input", handleInput); // Event listener for input field
@@ -58,7 +58,7 @@ function guessLetter(letter) {
   }
   lettersGuessed.push(letter); // Updates array of guessed letters and returns the updated array
   document.querySelector(".guessed-letters").innerHTML =
-    lettersGuessed.join("");
+    lettersGuessed.join(" ");
 }
 
 // Handles correct guesses // - Looks for occurences of letter in correctWord and splices them into currentWord
@@ -68,7 +68,7 @@ function handleCorrectGuess(letter) {
       currentWord.splice(i, 1, letter); // Uses variable i to track index number and exchanges '_' for letter in currentWord
     }
   }
-  document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
+  document.querySelector(".current-word").innerHTML = currentWord.join(" "); // Creates string from array and displays currentWord to user
   if (currentWord.join("") === correctWord) {
     document.querySelector(".guess-input").disabled = true; // Disable input when game is won
     printMessage("You won!");
