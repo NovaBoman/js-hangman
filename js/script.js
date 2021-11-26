@@ -16,7 +16,7 @@ function startGame() {
   lettersGuessed = [];
   wrongGuesses = 0;
   updateImage(wrongGuesses);
-  document.querySelector(".guess").disabled = false;
+  document.querySelector(".guess").disabled = false; // Enables input after being disabled when game is won or lost
 
   // Depending on the length of correctWord, fills currentWord array with placeholder '_' on each index
   for (let i = 0; i < correctWord.length; i++) {
@@ -61,7 +61,7 @@ function handleCorrectGuess(letter) {
   }
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
   if (currentWord.join("") === correctWord) {
-    document.querySelector(".guess").disabled = true;
+    document.querySelector(".guess").disabled = true; // Disable input when game is won
     console.log("you won!");
   }
 }
@@ -72,7 +72,7 @@ function handleWrongGuess() {
   updateImage(wrongGuesses);
   console.log(`wrong ${wrongGuesses} times`);
   if (wrongGuesses === 6) {
-    document.querySelector(".guess").disabled = true;
+    document.querySelector(".guess").disabled = true; // Disable input when game is lost
     console.log("game over");
   }
 }
@@ -80,5 +80,5 @@ function handleWrongGuess() {
 // Updates image //
 function updateImage(number) {
   imageSource = `images/h${number}.png`; // Changes the url for the image
-  document.querySelector(".hangman-image").src = imageSource; // Sets the image source for the HTML element
+  document.querySelector(".hangman-image").src = imageSource; // Sets the image source attribute for the HTML element
 }
