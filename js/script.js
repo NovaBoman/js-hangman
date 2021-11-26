@@ -8,6 +8,7 @@ let imageSource = `images/h${wrongGuesses}.png`;
 
 document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
 document.querySelector(".start-game").addEventListener("click", startGame); // Event listener for start button
+document.querySelector(".guess").disabled = true; // Disables the input field until the game is started
 
 // Starts the game //
 function startGame() {
