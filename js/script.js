@@ -9,6 +9,7 @@ let imageSource = `images/h${wrongGuesses}.png`;
 document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
 document.querySelector(".new-game").addEventListener("click", startGame); // Event listener for start button
 document.querySelector(".guess-input").disabled = true; // Disables the input field until the game is started
+printMessage("Welcome to Hangman, press 'New Game' to start!");
 
 // Starts the game //
 function startGame() {
@@ -18,6 +19,7 @@ function startGame() {
   wrongGuesses = 0;
   updateImage(wrongGuesses);
   document.querySelector(".guess-input").disabled = false; // Enables input after being disabled when game is won or lost
+  printMessage("");
 
   // Depending on the length of correctWord, fills currentWord array with placeholder '_' on each index
   for (let i = 0; i < correctWord.length; i++) {
@@ -30,13 +32,14 @@ document.querySelector(".guess-input").addEventListener("input", handleInput); /
 
 // Handles user input in input field //
 function handleInput(e) {
+  printMessage("");
   if (e.target.value.match(/[a-z]/i)) {
     // Defines a regular expression with a pattern to match input to, only letter a-z are allowed, flag i makes it case insensitive
     // If the value of the event target (input field) matches the pattern run function guessLetter()
     guessLetter(e.target.value);
   } else {
     // Handles cases where input does not match expected pattern
-    console.log("invalid input");
+    printMessage("Your guess must be a letter between A-Z");
   }
   e.target.value = ""; // Clears input field
 }
@@ -63,7 +66,7 @@ function handleCorrectGuess(letter) {
   document.querySelector(".current-word").innerHTML = currentWord.join(""); // Creates string from array and displays currentWord to user
   if (currentWord.join("") === correctWord) {
     document.querySelector(".guess-input").disabled = true; // Disable input when game is won
-    console.log("you won!");
+    printMessage("You won!");
   }
 }
 
@@ -74,7 +77,7 @@ function handleWrongGuess() {
   console.log(`wrong ${wrongGuesses} times`);
   if (wrongGuesses === 6) {
     document.querySelector(".guess-input").disabled = true; // Disable input when game is lost
-    console.log("game over");
+    printMessage("You lost!");
   }
 }
 
@@ -82,4 +85,9 @@ function handleWrongGuess() {
 function updateImage(number) {
   imageSource = `images/h${number}.png`; // Changes the url for the image
   document.querySelector(".hangman-image").src = imageSource; // Sets the image source attribute for the HTML element
+}
+
+// Prints messages to user //
+function printMessage(string) {
+  document.querySelector(".message-to-user").innerHTML = string;
 }
