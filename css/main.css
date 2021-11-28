@@ -1,7 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Nanum+Pen+Script&display=swap");
+:root {
+  font-size: 16px;
+}
+
+body,
+input,
+button {
+  font-family: "Fredericka the Great", cursive;
+}
+
+h1 {
+  margin: 2vw;
+  font-weight: normal;
+  text-align: center;
+  font-size: 10vmin;
+}
+
+p,
+input,
+button {
+  margin-bottom: 2vw;
+  font-size: 5vmin;
+}
+
+p.current-word {
+  margin-bottom: 2vw;
+  font-size: 8vmin;
+  text-transform: uppercase;
+  visibility: hidden;
+}
+
+.guessed-letters {
+  margin-top: 1vw;
+}
+
+.text-container {
+  padding: 3vw 0;
+  text-align: center;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/blackboard-large.jpg");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: 20%;
+  color: #fff;
+}
+
+main {
+  width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  padding: 2vmax;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "header header" "image text" "none button";
+  -ms-grid-rows: 2fr 3fr 3fr;
+      grid-template-rows: 2fr 3fr 3fr;
+  -ms-grid-columns: 50%;
+      grid-template-columns: 50%;
+}
+
+@media (orientation: portrait) {
+  main {
+        grid-template-areas: "header" "image" "text" "button";
+    -ms-grid-rows: 1fr 4fr 4fr 1fr;
+        grid-template-rows: 1fr 4fr 4fr 1fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: header;
+}
+
+.image-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: image;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.image-container img {
+  width: 50%;
+  margin: auto;
+}
+
+.text-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: text;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.text-container * {
+  width: 100%;
+}
+
+.text-container input {
+  max-width: 10vmax;
+  padding: 1vmin;
+  margin-right: 2vw;
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+.text-container input:focus {
+  border: 2px solid #e4a531;
+}
+
+.text-container .chances-left {
+  width: 50%;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
+
+button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: button;
+  width: 70%;
+  max-height: 12vmin;
+  margin: 0 auto 4vmax;
+  padding: 1vmin 4vw;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

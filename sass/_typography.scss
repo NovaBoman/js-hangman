@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Nanum+Pen+Script&display=swap");
+
+:root {
+  font-size: 16px;
+}
+body,
+input,
+button {
+  font-family: "Fredericka the Great", cursive;
+}
+
+h1 {
+  margin: 2vw;
+  font-weight: normal;
+  text-align: center;
+  font-size: 10vmin;
+}
+p,
+input,
+button {
+  margin-bottom: 2vw;
+  font-size: 5vmin;
+}
+
+p.current-word {
+  margin-bottom: 2vw;
+  font-size: 8vmin;
+  text-transform: uppercase;
+  visibility: hidden;
+}
+.guessed-letters {
+  margin-top: 1vw;
+}
+.text-container {
+  padding: 3vw 0;
+  text-align: center;
+}

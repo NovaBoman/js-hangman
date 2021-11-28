@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
-    <header>
-        <h1>Uppgift 03 - Hangman</h1>
-    </header>
+
     <main>
+        <header>
+            <h1>Hangman</h1>
+        </header>
 
-        <img class="hangman-image" src="" alt="Hangman image">
+        <div class="image-container">
+            <img class="hangman-image" src="" alt="Hangman image">
+        </div>
 
-        <p class="message-to-user"></p>
+        <div class="text-container">
+            <p class="message-to-user"></p>
 
-        <p class="current-word"></p>
+            <p class="current-word">Word</p>
 
-        <p class="wrong-guesses"></p>
+            <input class="guess-input" type="text">
+            <p class="chances-left">Chances left: 6 / 6</p>
 
-        <p class="guessed-letters"></p>
+
+
+            <p class="guessed-letters">Guesses:</p>
+        </div>
 
         <button class="new-game" type="button">New Game</button>
-
-        <input class="guess-input" type="text">
-
-
-
-
-
     </main>
-    <footer>
-        Chas Academy - Hangman
-    </footer>
+
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 
