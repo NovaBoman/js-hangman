@@ -31,7 +31,7 @@ main {
   grid-template-areas:
     "header header"
     "image text"
-    "none button";
+    ". button";
 
   grid-template-rows: 2fr 3fr 3fr;
   grid-template-columns: 50%;
@@ -72,24 +72,27 @@ header {
     //Sets the width of all children to 100%;
     width: 100%;
   }
-  input {
-    max-width: 10vmax;
-    padding: 1vmin;
-    margin-right: 2vw;
-    background: none;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    align-self: baseline;
-  }
+}
 
-  input:focus {
-    border: 2px solid rgb(228, 165, 49);
-  }
-  .chances-left {
-    width: 50%;
-    align-self: baseline;
-  }
+input {
+  max-width: 10vmax;
+  padding: 1vmin;
+  margin-right: 2vw;
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  align-self: baseline;
+}
+
+input:focus {
+  border: 3px solid rgb(228, 165, 49);
+  outline: none;
+}
+
+.chances-left {
+  width: 50%;
+  align-self: baseline;
 }
 
 button {
@@ -102,4 +105,8 @@ button {
   border: 2px solid #fff;
   border-radius: 10px;
   color: #fff;
+}
+button:focus {
+  border: 3px solid rgb(228, 165, 49);
+  outline: none;
 }

@@ -7,6 +7,7 @@ let lettersGuessed = []; // Tracker for guessed letters
 let imageSource = `images/h${wrongGuesses}.png`;
 
 document.querySelector(".hangman-image").src = imageSource; // Sets the image source for hangman image
+document.querySelector(".guess-input").addEventListener("input", handleInput); // Event listener for input field
 document.querySelector(".new-game").addEventListener("click", startGame); // Event listener for start button
 document.querySelector(".guess-input").disabled = true; // Disables the input field until the game is started
 printMessage("Press 'New Game' to start!");
@@ -32,8 +33,6 @@ function startGame() {
   document.querySelector(".current-word").innerHTML = currentWord.join(" "); // Creates string from currentWord and displays to user using p-tag.
   document.querySelector(".current-word").style.visibility = "visible";
 }
-
-document.querySelector(".guess-input").addEventListener("input", handleInput); // Event listener for input field
 
 // Handles user input in input field //
 function handleInput(e) {

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Nanum+Pen+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 :root {
   font-size: 16px;
 }
@@ -68,7 +68,7 @@ main {
   text-align: center;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header header" "image text" "none button";
+      grid-template-areas: "header header" "image text" ". button";
   -ms-grid-rows: 2fr 3fr 3fr;
       grid-template-rows: 2fr 3fr 3fr;
   -ms-grid-columns: 50%;
@@ -130,7 +130,7 @@ header {
   width: 100%;
 }
 
-.text-container input {
+input {
   max-width: 10vmax;
   padding: 1vmin;
   margin-right: 2vw;
@@ -142,11 +142,12 @@ header {
       align-self: baseline;
 }
 
-.text-container input:focus {
-  border: 2px solid #e4a531;
+input:focus {
+  border: 3px solid #e4a531;
+  outline: none;
 }
 
-.text-container .chances-left {
+.chances-left {
   width: 50%;
   -ms-flex-item-align: baseline;
       align-self: baseline;
@@ -164,5 +165,10 @@ button {
   border: 2px solid #fff;
   border-radius: 10px;
   color: #fff;
+}
+
+button:focus {
+  border: 3px solid #e4a531;
+  outline: none;
 }
 /*# sourceMappingURL=main.css.map */
