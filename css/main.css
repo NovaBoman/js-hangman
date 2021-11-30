@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
-:root {
-  font-size: 16px;
-}
-
 body,
 input,
 button {
@@ -114,20 +110,25 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.guess-input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.text-container * {
-  width: 100%;
 }
 
 input {
@@ -138,19 +139,11 @@ input {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 10px;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
 }
 
 input:focus {
   border: 3px solid #e4a531;
   outline: none;
-}
-
-.chances-left {
-  width: 50%;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
 }
 
 button {

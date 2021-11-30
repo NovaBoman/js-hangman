@@ -1,5 +1,4 @@
 @import "typography";
-@import "variables";
 
 * {
   box-sizing: border-box;
@@ -63,15 +62,15 @@ header {
 .text-container {
   grid-area: text;
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
 
-  * {
-    //Sets the width of all children to 100%;
-    width: 100%;
-  }
+.guess-input-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 input {
@@ -82,17 +81,11 @@ input {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 10px;
-  align-self: baseline;
 }
 
 input:focus {
   border: 3px solid rgb(228, 165, 49);
   outline: none;
-}
-
-.chances-left {
-  width: 50%;
-  align-self: baseline;
 }
 
 button {

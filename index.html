@@ -23,16 +23,20 @@
         </div>
 
         <div class="text-container">
-            <p class="message-to-user"></p>
 
+            <p class="message-to-user">Press 'New Game' to start!</p>
+
+            <!-- Visibility set to hidden on page load to let element occupy space and avoid reflow -->
             <p class="current-word">Word</p>
 
-            <input class="guess-input" type="text" disabled="true"> <!-- Input is enabled when game is started -->
-            <p class="chances-left">Chances left: 6 / 6</p>
+            <div class="guess-input-wrapper">
+                <input class="guess-input" type="text" disabled="true"><!-- Input is enabled when game is started -->
 
-
+                <p class="chances-left">Chances left: 6 / 6 </p>
+            </div>
 
             <p class="guessed-letters">Guesses:</p>
+
         </div>
 
         <button class="new-game" type="button">New Game</button>
