@@ -1,5 +1,15 @@
 /// Global Variables ///
-const wordList = ["green", "red", "purple"]; // Array from which correctWord is randomly chosen.
+const wordList = [
+  "green",
+  "red",
+  "purple",
+  "yellow",
+  "black",
+  "orange",
+  "beige",
+  "crimson",
+  "teal",
+]; // Array from which correctWord is randomly chosen.
 let correctWord = "";
 let currentWord = []; // Word to be displayed to user.
 let wrongGuesses = 0; // Tracks number of wrong guesses.
