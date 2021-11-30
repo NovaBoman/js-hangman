@@ -5,10 +5,13 @@ button {
   font-family: "Fredericka the Great", cursive;
 }
 
+body {
+  text-align: center;
+}
+
 h1 {
   margin: 2vw;
   font-weight: normal;
-  text-align: center;
   font-size: 10vmin;
 }
 
@@ -32,7 +35,6 @@ p.current-word {
 
 .text-container {
   padding: 3vw 0;
-  text-align: center;
 }
 
 * {
@@ -61,7 +63,6 @@ main {
   min-height: 100%;
   max-height: 100%;
   padding: 2vmax;
-  text-align: center;
   display: -ms-grid;
   display: grid;
       grid-template-areas: "header header" "image text" ". button";
@@ -92,7 +93,6 @@ header {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: image;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

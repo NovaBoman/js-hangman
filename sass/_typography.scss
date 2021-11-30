@@ -6,12 +6,16 @@ button {
   font-family: "Fredericka the Great", cursive;
 }
 
+body {
+  text-align: center;
+}
+
 h1 {
   margin: 2vw;
   font-weight: normal;
-  text-align: center;
   font-size: 10vmin;
 }
+
 p,
 input,
 button {
@@ -25,10 +29,11 @@ p.current-word {
   text-transform: uppercase;
   visibility: hidden;
 }
+
 .guessed-letters {
   margin-top: 1vw;
 }
+
 .text-container {
   padding: 3vw 0;
-  text-align: center;
 }
