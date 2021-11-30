@@ -53,6 +53,7 @@ header {
   grid-area: image;
   text-align: center;
   display: flex;
+  flex-direction: column;
   img {
     width: 50%;
     margin: auto;
