@@ -39,7 +39,7 @@ p.current-word {
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -65,20 +65,27 @@ main {
   padding: 2vmax;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header header" "image text" ". button";
+  grid-template-areas:
+    "header header"
+    "image text"
+    ". button";
   -ms-grid-rows: 2fr 3fr 3fr;
-      grid-template-rows: 2fr 3fr 3fr;
+  grid-template-rows: 2fr 3fr 3fr;
   -ms-grid-columns: 50%;
-      grid-template-columns: 50%;
+  grid-template-columns: 50%;
 }
 
 @media (orientation: portrait) {
   main {
-        grid-template-areas: "header" "image" "text" "button";
+    grid-template-areas:
+      "header"
+      "image"
+      "text"
+      "button";
     -ms-grid-rows: 1fr 4fr 4fr 1fr;
-        grid-template-rows: 1fr 4fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 4fr 1fr;
     -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
+    grid-template-columns: 100%;
   }
 }
 
@@ -98,8 +105,8 @@ header {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .image-container img {
@@ -116,13 +123,13 @@ header {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .guess-input-wrapper {
@@ -131,8 +138,8 @@ header {
   display: flex;
   width: 100%;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 input {
